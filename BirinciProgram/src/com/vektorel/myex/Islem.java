@@ -10,6 +10,9 @@ public class Islem {
 			e.printStackTrace();
 			e.arraySikintilari();
 		}
+		
+		
+	
 
 	}
 
