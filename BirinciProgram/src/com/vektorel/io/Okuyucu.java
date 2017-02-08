@@ -14,7 +14,7 @@ public class Okuyucu {
 			oku = new Scanner(file);
 			
 			while (oku.hasNext()) {
-				System.out.println(oku.next());
+				System.out.println(oku.nextLine());
 			}
 			
 		} catch (FileNotFoundException e) {
