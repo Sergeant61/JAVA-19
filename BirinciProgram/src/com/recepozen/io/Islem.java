@@ -9,17 +9,17 @@ public class Islem {
 		
 		IYazmaI yazici = new Yazici();
 		
-		yazici.dosyaAc("H:/veritabani.txt");
+		yazici.dosyaAc("F:/veritabani.txt");
 		yazici.veriYaz(insan);
 		yazici.dosyaKapt();
 		
 		IOkuII okuyucu = new Okuyucu();
 		
-		okuyucu.dosyaAcOku("H:/veritabani.txt","H:/okunan.txt");
+		okuyucu.dosyaAcOku("F:/veritabani.txt","F:/okunan.txt");
 		
 		IOkuI okuyucuKonsol = new Okuyucu();
 		
-		okuyucuKonsol.dosyaAcOku("H:/veritabani.txt");
+		okuyucuKonsol.dosyaAcOku("F:/veritabani.txt");
 		
 		
 	}

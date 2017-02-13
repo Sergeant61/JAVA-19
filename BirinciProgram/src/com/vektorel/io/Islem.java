@@ -1,5 +1,6 @@
 package com.vektorel.io;
 
+import java.util.Collections;
 
 /**
  * byte Tabanlý 
@@ -33,6 +34,8 @@ public class Islem {
 		Person person = new Person();
 	
  		Yazici yazici = new Yazici();
+ 		
+ 		
 		
  		yazici.dosyaAc();
  		person.setId(1);
