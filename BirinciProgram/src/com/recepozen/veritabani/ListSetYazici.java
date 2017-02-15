@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -11,9 +12,8 @@ import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class Okuyucu {
+public class ListSetYazici {
 	private Scanner sc;
-	private Yazici yazici;
 
 	public List<String> dosyaOkuList(File file, boolean isSatirSatirMi, boolean isArrayListMiLinkedListMi) {
 
@@ -77,32 +77,61 @@ public class Okuyucu {
 		}
 
 		if (isSatirSatirMi) {
-			this.yazici = new Yazici();
+
 			while (this.sc.hasNextLine()) {
 
 				if (listMiSetMi) {
-					yazici.listYaz(list, sc.nextLine());
+					listYaz(list, sc.nextLine());
 
 				} else {
-					yazici.setYaz(set, sc.nextLine());
+					setYaz(set, sc.nextLine());
 				}
 
 			}
 
 		} else {
 
-			this.yazici = new Yazici();
 			while (this.sc.hasNext()) {
 
 				if (listMiSetMi) {
-					yazici.listYaz(list, sc.next());
+					listYaz(list, sc.next());
 
 				} else {
-					yazici.setYaz(set, sc.next());
+					setYaz(set, sc.next());
 				}
 
 			}
 		}
 	}
 
+	private void listYaz(List<String> list, String value) {
+
+		list.add(value);
+
+	}
+
+	private void setYaz(Set<String> set, String value) {
+
+		set.add(value);
+
+	}
+
+	public void konsolYaz(List<String> list) {
+
+		for (int i = 0; i < list.size(); i++) {
+
+			System.out.println(list.get(i));
+
+		}
+
+	}
+
+	public void konsolYaz(Set<String> set) {
+
+		Iterator<String> iterator = set.iterator();
+
+		while (iterator.hasNext())
+			System.out.println(iterator.next());
+
+	}
 }

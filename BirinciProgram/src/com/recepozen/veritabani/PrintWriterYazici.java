@@ -2,50 +2,23 @@ package com.recepozen.veritabani;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Scanner;
-import java.util.Set;
+import java.io.PrintWriter;
 
-public class Yazici {
+public class PrintWriterYazici {
 
-	private Scanner sc;
+	public PrintWriter printWriterYaz(File file, String text) {
+		PrintWriter pw = null;
 
-	public void listYaz(List<String> list, String value) {
+		try {
+			pw = new PrintWriter(file);
 
-		list.add(value);
+			pw.println(text);
 
-	}
-
-	public void setYaz(Set<String> set, String value) {
-
-		set.add(value);
-
-	}
-
-	public void KonsolYaz(List<String> list) {
-
-		for (int i = 0; i < list.size(); i++) {
-
-			System.out.println(list.get(i));
-
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
 		}
-
-	}
-
-	public void KonsolYaz(Set<String> set) {
-
-		Iterator<String> iterator = set.iterator();
-
-		while (iterator.hasNext())
-			System.out.println(iterator.next());
-
-	}
-
-	public void veriYaz(File file) {
-
-		
-
+		pw.close();
+		return pw;
 	}
 
 }
